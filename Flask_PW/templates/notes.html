@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home</title>
+		<link rel="stylesheet" href="static/style.css">
+	</head>
+	<body>
+		<header>
+			<p><a href="/">Home</a> | <a href="/new_note">New meeting note</a> | <a href="/past_note">Past meeting notes</a> | <a href="/weather">Weather Forecast</a></p>
+		</header>
+		
+		<h1>Past Meeting Notes</h1>
+		<br>
+		<table>
+			<tr>
+				<th>Date</th>
+				<th>Venue</th>
+				<th>Meeting Notes</th>
+				<th>Actions to take</th>
+			<tr>
+			{% for entry in meeting_data %}
+			<tr>
+				<td>{{ entry[0] }}</td>
+				<td>{{ entry[1] }}</td>
+				<td>{{ entry[2] }}</td>
+				<td>{{ entry[3] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
